@@ -5,4 +5,4 @@ y = int(seconds) - x_seconds
 minutes = y / 60 
 c = int(minutes) % 60
 hour= int(minutes) - c
-print (str(seconds) + " seconds is " + str(hour) + " hours, " + str(minutes) + " minute, and "  + str(x_seconds) + " seconds")
+print ({} + " seconds is " + {} + " hours, " + {} + " minute, and "  + {} + " seconds".format(seconds,hour,minutes,x_seconds))

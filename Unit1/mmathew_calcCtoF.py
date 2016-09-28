@@ -1,5 +1,5 @@
-b = input("Enter Temperture Celcius: ") 
-b = float(b)
-b = b * 1.8
-b = b + 32
-print ("Celcius Into Fahrenheit Equals To " + str(b))
+c_t = input("Enter Temperture Celcius: ") 
+c = float(c_t)
+c = c * 1.8
+c = c + 32
+print ("Celcius " + str(c_t) + " Into Fahrenheit Equals To " + str(c))
