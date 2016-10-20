@@ -34,10 +34,34 @@ elif pluralizer[-2:]== "ey" :
 elif pluralizer[-2:]== "uy" :
     print(number + " " + pluralizer + "s")
     
+# Taking It Further Code-------------------------------------
+
+elif pluralizer[-1]=="s":
+    print(numbers + " " + pluralizer + "es")
+    
+elif pluralizer[-1]=="x":
+    print(numbers + " " + pluralizer + "es")
+    
+elif pluralizer[-1]=="z":
+    print(numbers + " " + pluralizer + "es")
+    
+elif pluralizer[-1]=="f":
+    print(numbers + " " + pluralizer + "ves")
+    
+elif pluralizer[-1]=="o":
+    print(numbers + " " + pluralizer + "es")
+    
+elif pluralizer[-2]=="is":
+    print(numbers + " " + pluralizer + "es")
+
+elif pluralizer[-2]=="on":
+    print(numbers + " " + pluralizer + "a")
+
+# Taking It Further Code---------------------------------------
 elif number > "1":
     print(number + " " + pluralizer + "s")
-
+    
 else:
     print("Error")
 
-    
+
