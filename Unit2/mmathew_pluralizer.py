@@ -34,7 +34,7 @@ elif pluralizer[-2:]== "ey" :
 elif pluralizer[-2:]== "uy" :
     print(number + " " + pluralizer + "s")
     
-# Taking It Further Code-------------------------------------
+# Taking It Further Code -------------------------------------
 
 elif pluralizer[-1]=="s":
     print(numbers + " " + pluralizer + "es")
@@ -57,7 +57,7 @@ elif pluralizer[-2]=="is":
 elif pluralizer[-2]=="on":
     print(numbers + " " + pluralizer + "a")
 
-# Taking It Further Code---------------------------------------
+# Taking It Further Code End---------------------------------------
 elif number > "1":
     print(number + " " + pluralizer + "s")
     
