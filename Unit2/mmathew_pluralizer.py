@@ -37,25 +37,25 @@ elif pluralizer[-2:]== "uy" :
 # Taking It Further Code -------------------------------------
 
 elif pluralizer[-1]=="s":
-    print(numbers + " " + pluralizer + "es")
+    print(number + " " + pluralizer + "es")
     
 elif pluralizer[-1]=="x":
-    print(numbers + " " + pluralizer + "es")
+    print(number + " " + pluralizer + "es")
     
 elif pluralizer[-1]=="z":
-    print(numbers + " " + pluralizer + "es")
+    print(number + " " + pluralizer + "es")
     
 elif pluralizer[-1]=="f":
-    print(numbers + " " + pluralizer + "ves")
+    print(number + " " + pluralizer + "ves")
     
 elif pluralizer[-1]=="o":
-    print(numbers + " " + pluralizer + "es")
+    print(number + " " + pluralizer + "es")
     
 elif pluralizer[-2]=="is":
-    print(numbers + " " + pluralizer + "es")
+    print(number + " " + pluralizer + "es")
 
 elif pluralizer[-2]=="on":
-    print(numbers + " " + pluralizer + "a")
+    print(number + " " + pluralizer + "a")
 
 # Taking It Further Code End---------------------------------------
 elif number > "1":
