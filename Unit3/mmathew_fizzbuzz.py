@@ -1,12 +1,12 @@
 num = int(input("Enter a non-negative integer: "))
 num = num + 1
-for x in range(num):
-    if x % 3 == 0 and x % 5 == 0:
+for divisible in range(num):
+    if divisible % 3 == 0 and divisible % 5 == 0:
         print("FizzBuzz")
-    elif x % 5 == 0:
+    elif divisible % 5 == 0:
         print("Buzz")
-    elif x % 3 == 0:
+    elif divisible % 3 == 0:
         print("Fizz")
     else:
-        print(x)
+        print(divisible)
 
