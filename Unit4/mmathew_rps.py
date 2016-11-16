@@ -21,7 +21,7 @@ def get_comp_move():
         return 'r'
     elif comp_move == 2:
         return 'p'
-    else:
+    elif comp_move == 3:
         return 's'
 
 for x in range(10):
@@ -32,6 +32,9 @@ for x in range(10):
 #   purpose: allows the user to choose a number of rounds from 1 to 9.
 #   returns: the user-chosen number of rounds
 def get_rounds():
+    num_rounds = input("The numbers of rounds from 1 to 9: ")
+    return int(num_rounds)
+    
     
     
 
@@ -43,8 +46,25 @@ def get_rounds():
 #               "player" if player won
 #               "comp" if computer won
 #               "tie" if it's a tie
-#def get_round_winner(p1move, cmove):
-    #code here
+def get_round_winner(p1move,cmove):
+    if p1move == r and cmove == p:
+        return cmove
+    elif p1move == p and cmove == r :
+        return p1move
+    elif p1move == r and cmove == s :
+        return p1move
+    elif p1move == s and cmove == r :
+        return cmove
+    elif p1move == p and cmove == s:
+        return cmove
+    elif p1move == s and cmove == p:
+        return p1move
+    elif p1move == s and cmove == s :
+        return "tie"
+    elif p1move == r and cmove == r :
+        return "tie"
+    elif p1move == p and cmove == p :
+        return "tie"
 
 #function name: get_full_move
 #   arguments: a single letter move 'r','p', or 's'
@@ -53,14 +73,14 @@ def get_rounds():
 #               "Rock" if given "r"
 #               "Paper" if given "p"
 #               "Scissors" if given "s"
-#def get_full_move(shortmove):
+def get_full_move(shortmove):
     #code here
 
 #function name: print_score
 #   arguments: player score, computer score, number of ties
 #   purpose: prints the scoreboard
 #   returns: none
-#def print_score(pscore, cscore, ties):
+def print_score(pscore, cscore, ties):
     #code here
 
 #function name: rps
@@ -68,7 +88,7 @@ def get_rounds():
 #   purpose: the main game loop.  This should be the longest, using
 #               all the other functions to create RPS
 #   returns: none
-#def rps():
+def rps():
     #code here
 
 #function name: tests
@@ -76,7 +96,7 @@ def get_rounds():
 #   purpose: a place for you to write your tests.  replace 'rps' below
 #               with 'tests' to run this function instead of the game loop
 #   returns: none
-#def test():
+def test():
     #code here
 
 #rps()
