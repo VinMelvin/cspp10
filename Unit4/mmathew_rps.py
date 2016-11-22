@@ -6,26 +6,25 @@ import random
 #   returns: the player's move as either 'r', 'p', or 's'
 def get_p1_move():
     print("r = Rock \np = Paper \ns = Scissors")
-    choice = input("Pick from above [r|p|s]: ")
-    if choice == "r":
+    p1move = input("Pick from above [r|p|s]: ")
+    if p1move == "r":
         return 'r'
-    elif choice == "p":
+    elif p1move == "p":
         return 'p'
-    elif choice == "s":
+    elif p1move == "s":  
         return 's'
-get_p1_move()
 #function name: get_comp_move():
 #   arguments: none
 #   purpose: randomly generates the computer's move,
 #            either 'r' 'p' or 's'
 #   returns: the computer's randomly generated move
 def get_comp_move():
-    comp_move = random.randint(1,3)
-    if comp_move == 1:
+    cmove = random.randint(1,3)
+    if cmove == 1:
         return 'r'
-    elif comp_move == 2:
+    elif cmove == 2:
         return 'p'
-    elif comp_move == 3:
+    elif cmove == 3:
         return 's'
 
 # for x in range(10):
@@ -77,30 +76,53 @@ def get_round_winner(p1move,cmove):
 #               "Rock" if given "r"
 #               "Paper" if given "p"
 #               "Scissors" if given "s"
-#def get_full_move(shortmove):
-    #code here
+def get_full_move(shortmove):
+    if shortmove == 'r':
+        return "Rock"
+    elif shortmove == 'p':
+        return "Paper" 
+    elif shortmove == 's':
+        return "Scissors"
 
 #function name: print_score
 #   arguments: player score, computer score, number of ties
 #   purpose: prints the scoreboard
 #   returns: none
-#def print_score(pscore, cscore, ties):
-    #return 1
+def print_score(pscore, cscore, ties):
+    pscore == int(pscore) + 1
+    cscore == int(cscore) + 1
+    ties == int(ties) + 1
 
 #function name: rps
 #   arguments: none
 #   purpose: the main game loop.  This should be the longest, using
 #               all the other functions to create RPS
 #   returns: none
-#def rps():
-   # return 1
+def rps():
+    round = get_rounds()
+    
+    p1move = get_p1_move()
+    compmove = get_comp_move()
+    
+    print("player chose {}".format(get_full_move(p1move)))
+    
+    get_round_winner(p1move,compmove)
+    if winner == "p1move":
+        print("")
+    elif winner == "cmove":
+        print("")
+    elif winner == "ties":
+        print("")
 
 #function name: tests
 #   arguments: none
 #   purpose: a place for you to write your tests.  replace 'rps' below
 #               with 'tests' to run this function instead of the game loop
 #   returns: none
-#def test():
-    #return 1
-
+def test():
+    pscore == 0
+    cscore == 0
+    ties == 0
+    
+    
 #rps()
