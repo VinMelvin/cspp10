@@ -51,7 +51,7 @@ def get_rounds():
 #               "tie" if it's a tie
 def get_round_winner(p1move,cmove):
     if p1move == "r" and cmove == "p":
-        return "Player Won"
+        return "Computer Won"
     elif p1move == "p" and cmove == "r":
         return "Player Won"
     elif p1move == "r" and cmove == "s":
@@ -107,9 +107,12 @@ def rps():
     for x in range(round):
         player = get_p1_move()
         computer = get_comp_move()
-        print("player score {}".format(get_full_move(player)))
+        print("Player move {}".format(get_full_move(player)))
         get_round_winner(player,computer)
-        print("Computer score {}".format(get_full_move(computer)))
+        print("Computer move {}".format(get_full_move(computer)))
+        # print("Player score {}".format(pscore))
+        # print("Computer score {}".format(cscore))
+        # print("Ties between computer and player {}".format(ties))
         winner = get_round_winner(player,computer)
         print(winner)
         if winner == "Player Won":
@@ -118,10 +121,13 @@ def rps():
         elif winner == "Computer Won":
             print("Computer Wins the round")
             cscore = cscore + 1
-        elif winner == "ties":  
+        elif winner == "tie":  
             print("It was a tie")
             ties = ties + 1           
-        print(pscore,cscore,ties)
+        # print(pscore,cscore,ties)
+        print("Player score {}".format(pscore))
+        print("Computer score {}".format(cscore))
+        print("Ties between computer and player {}".format(ties))
     # player_score = 0
     # comp_score = 0
     # ties = 0
