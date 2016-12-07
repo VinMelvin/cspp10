@@ -1,11 +1,12 @@
 import random
+print("Welcome to Rock Paper Scissors!\n----------------------------------------")
 
 #function name: get_p1_move
 #   arguments: none
 #   purpose: present player with options, use input() to get player move
 #   returns: the player's move as either 'r', 'p', or 's'
 def get_p1_move():
-    print("r = Rock \np = Paper \ns = Scissors")
+    print("\nr = Rock \np = Paper \ns = Scissors")
     p1move = input("Pick from above [r|p|s]: ")
     if p1move == "r":
         return 'r'
@@ -51,23 +52,23 @@ def get_rounds():
 #               "tie" if it's a tie
 def get_round_winner(p1move,cmove):
     if p1move == "r" and cmove == "p":
-        return "Computer Won"
+        return "\nComputer Won"
     elif p1move == "p" and cmove == "r":
-        return "Player Won"
+        return "\nPlayer Won"
     elif p1move == "r" and cmove == "s":
-        return "Player Won"
+        return "\nPlayer Won"
     elif p1move == "s" and cmove == "r":
-        return "Computer Won"
+        return "\nComputer Won"
     elif p1move == "p" and cmove == "s":
-        return "Computer Won"
+        return "\nComputer Won"
     elif p1move == "s" and cmove == "p":
-        return "Player Won"
+        return "\nPlayer Won"
     elif p1move == "s" and cmove == "s":
-        return "tie"
+        return "\nBoth Tied"
     elif p1move == "r" and cmove == "r":
-        return "tie"
+        return "\nBoth Tied"
     elif p1move == "p" and cmove == "p":
-        return "tie"
+        return "\nBoth Tied"
 
 #function name: get_full_move
 #   arguments: a single letter move 'r','p', or 's'
@@ -107,54 +108,34 @@ def rps():
     for x in range(round):
         player = get_p1_move()
         computer = get_comp_move()
-        print("Player move {}".format(get_full_move(player)))
+        print("\nPlayer move {}".format(get_full_move(player)))
         get_round_winner(player,computer)
         print("Computer move {}".format(get_full_move(computer)))
-        # print("Player score {}".format(pscore))
-        # print("Computer score {}".format(cscore))
-        # print("Ties between computer and player {}".format(ties))
         winner = get_round_winner(player,computer)
         print(winner)
-        if winner == "Player Won":
+        if winner == "\nPlayer Won":
             print("Player 1 Wins the Round")
             pscore = pscore + 1
-        elif winner == "Computer Won":
+        elif winner == "\nComputer Won":
             print("Computer Wins the round")
             cscore = cscore + 1
-        elif winner == "tie":  
-            print("It was a tie")
+        elif winner == "\nTie":  
+            print("Round Tie")
             ties = ties + 1           
-        # print(pscore,cscore,ties)
-        print("Player score {}".format(pscore))
-        print("Computer score {}".format(cscore))
-        print("Ties between computer and player {}".format(ties))
-    # player_score = 0
-    # comp_score = 0
-    # ties = 0
-    # rounds = get_rounds()
-    # for x in range(rounds):
-    #     player_1 = get_p1_move()
-    #     computer_1 = get_comp_move()
-    #     winner = get_round_winner(player_1,computer_1)
-    #     print(winner)
-    #     if winner == "Player Won":
-    #         player_score = player_score + 1
-    #     elif winner == "Computer Won":
-    #         comp_score = comp_score + 1
-    #     elif winner == "tie":
-    #         ties = ties + 1
-    #     print_score(player_score, comp_score, ties)
+        print("\nPlayer score: {}".format(pscore))
+        print("Computer score: {}".format(cscore))
+        print("Ties between Computer and Player: {}\n--------------------------------".format(ties))
+        if pscore > round / 2:
+            break
+        elif cscore > round / 2:
+            break
         
-    #     if player_score > rounds / 2:
-    #         break
-    #     elif comp_score > rounds / 2:
-    #         break
-    
-    # if player_score > comp_score:
-    #     print ("\nYOU WIN WITH {} POINTS".format(player_1))
-    # elif comp_score > player_score:
-    #     print ("\nYOU LOSS BY " + str(comp_score - player_score) + " POINTS!!!")
-    # elif comp_score == player_score:
-    #     print ("\nYOU TIED WITH THE COMPUTER!!!")
+        
+    if pscore > cscore:
+        print ("\nPLAYER WIN!!!")
+    elif cscore > pscore:
+        print("\nPLAYER LOST")
+    elif cscore == pscore:
+        print ("\nPLAYER TIED WITH THE COMPUTER!!!")
     
 rps()
