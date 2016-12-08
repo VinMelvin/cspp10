@@ -23,7 +23,7 @@ print("Welcome To Craps\n---------------------------------------")
 def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
-    dice_sum = dice1 + dice2
+    dice_sum = dice1 + dice2    
     print("Rolled 2 dice: {} {}, Total of {}".format(dice1,dice2,dice_sum))
     return dice_sum
 
@@ -36,7 +36,8 @@ roll2dice()
 #       if roll is 7,11: return "win"
 #       if roll is 2,3,12: return "lose"
 #       if otherwise: return "point"
-def first_roll_result()  
+#def first_roll_result():
+    
 
 
 
