@@ -77,7 +77,7 @@ def rps():
         elif winner == "\nComputer Won":
             print("Computer Wins the round")
             cscore = cscore + 1
-        elif winner == "\nTie":  
+        elif winner == "\nBoth Tied":  
             print("Round Tie")
             ties = ties + 1           
         print("\nPlayer score: {}".format(pscore))
