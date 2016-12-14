@@ -37,16 +37,18 @@ roll2dice()
 #       if roll is 7,11: return "win"
 #       if roll is 2,3,12: return "lose"
 #       if otherwise: return "point number"
-def first_roll_result(roll):
-    roll = roll2dice()
-    if roll == 7 or 11:
+def first_roll_result():
+    roll = roll2dice
+    if roll == 7 or roll == 11:
         return "win"
-    elif roll == 2 or 3 or 12:
+    elif roll == 2 or roll == 3 or roll == 12:
         return "lose"
     else:
         return "point number"
-first_roll_result(roll)
+first_roll_result()
 # function name: bank_account  
 #   purpose: 
 #   arguments: 
 #   returns: 
+
+input("Press l to terminate.")
