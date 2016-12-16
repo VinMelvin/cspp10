@@ -6,15 +6,16 @@ print("Welcome To Craps\n---------------------------------------")
 #   arguments:   
 
 #   returns: 
-def bank_account(bank,bet):
+def bank_account():
     bank = int(100)
     print("You have ${} in your bank".format(bank))
     bet = int(input("Enter a whole number for your bet: "))
-    return bet
-#     if bet >= 100:
-#         print("You don't have that much money!!!")
-#     elif bet < 0:
-#         print("Bet a postive number")
+    if bet > 100:
+        print("You don't have that much money!!!")
+    elif bet < 0:
+        print("Bet a postive number")
+    
+    
 
 print(bank_account())
 
@@ -47,8 +48,8 @@ def first_roll_result(roll):
     else:
         return "point number"
 
-dice_total = roll2dice()
-print(first_roll_result(dice_total))
+# dice_total = roll2dice()
+# print(first_roll_result(dice_total))
 # function name: bank_account  
 #   purpose: 
 #   arguments: 
@@ -56,5 +57,5 @@ print(first_roll_result(dice_total))
 
 input("Press Enter to terminate.")
 
-#def house():
-    #if 
+# def house():
+  
