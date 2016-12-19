@@ -6,7 +6,7 @@ print("Welcome To Craps\n---------------------------------------")
 #   arguments:   
 
 #   returns: 
-def bank_account():
+def bank_account(bet):
     bank = int(100)
     print("You have ${} in your bank".format(bank))
     bet = int(input("Enter a whole number for your bet: "))
@@ -61,5 +61,4 @@ def first_roll_result(roll):
 
 input("Press Enter to terminate.")
 
-#def house():
-  
+def house():
