@@ -82,7 +82,7 @@ def rps():
             ties = ties + 1           
         print("\nPlayer score: {}".format(pscore))
         print("Computer score: {}".format(cscore))
-        print("Ties between Computer and Player: {}\n--------------------------------".format(ties))
+        print("Ties between Computer and Player: {}\n--------------------------------------\n--------------------------------------".format(ties))
         if pscore > round / 2:
             break
         elif cscore > round / 2:
@@ -92,6 +92,7 @@ def rps():
         print ("\nPLAYER WIN!!!")
     elif cscore > pscore:
         print("\nPLAYER LOST")
+        print("\nComputer Won!!!!!")
     elif cscore == pscore:
         print ("\nPLAYER TIED WITH THE COMPUTER!!!")
     

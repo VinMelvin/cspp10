@@ -9,19 +9,17 @@ print("Welcome To Craps\n---------------------------------------")
 def bank_account():
     bank = int(100)
     print("You have ${} in your bank".format(bank))
-    return bank
-    
-def bet_number():
     bet = int(input("Enter a whole number for your bet: "))
     if bet > 100:
         print("You don't have that much money!!!")
     elif bet < 0:
         print("Bet a postive number")
+    elif bet != int:
+        print("Bet a whole number")
     else:
         return bet
-
-
-
+    
+    
 
 # function name: roll2dice
 #   purpose: generating two random dice rolls and 
@@ -57,19 +55,10 @@ def first_roll_result(roll):
 #   arguments: 
 #   returns: 
 
-# input("Press Enter to terminate.")
+input("Press Enter to terminate.")
 
-def house():
-    bank = bank_account()
-    bet = bet_number()
-    dice_number = roll2dice()
-    first_roll = first_roll_result(dice_number)
-    if first_roll == "win":
-        print("You won the round ")
-        print()
-    elif first_roll == "lose":
-        print("You have losed the bet")
-    elif first_roll == "point number":
-        print("You have reached the point number")
-        
-house()
+#def house():
+  
+
+
+
