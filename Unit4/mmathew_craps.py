@@ -6,11 +6,17 @@ print("Welcome To Craps\n---------------------------------------")
 #   arguments:   
 
 #   returns: 
+
 def bank_account():
     bank = int(100)
     print("You have ${} in your bank".format(bank))
     return bank
-    
+
+# function name: bank_account  
+#   purpose: The amount of money in the players bank and how much to bet
+#   arguments:   
+
+#   returns:    
 def bet_number():
     bet = int(input("Enter a whole number for your bet: "))
     if bet > 100:
@@ -28,6 +34,7 @@ def bet_number():
 #   prints it out, and returns the sum
 #   arguments: none
 #   returns: the sum of the two dice
+
 def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
@@ -49,9 +56,19 @@ def first_roll_result(roll):
         return "lose"
     else:
         return "point number"
+        
+def point_number(sum_dice):
+    point_num = sum_dice
+    while True:
+        if point_num == 7:
+            return "lose"
+        elif point_num == point_num:
+            return "win"
+    
+    
+    
+    
 
-# dice_total = roll2dice()
-# print(first_roll_result(dice_total))
 # function name: bank_account  
 #   purpose: 
 #   arguments: 
@@ -64,12 +81,17 @@ def house():
     bet = bet_number()
     dice_number = roll2dice()
     first_roll = first_roll_result(dice_number)
-    if first_roll == "win":
-        print("You won the round ")
-        print()
-    elif first_roll == "lose":
-        print("You have losed the bet")
-    elif first_roll == "point number":
-        print("You have reached the point number")
+    while True:
+        if first_roll == "win":
+            print("You won the round ")
+            bank + bet
+            print(bank)
+        elif first_roll == "lose":
+            print("You have losed the bet")
+            bank - bet 
+            print(bank)
+        elif first_roll == "point number":
+            print("You have reached the point number")
+            point_number(first_roll)
         
 house()
