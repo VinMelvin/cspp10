@@ -50,20 +50,21 @@ def roll2dice():
 #       if roll is 2,3,12: return "lose"
 #       if otherwise: return "point number"
 def first_roll_result(roll):
-    if roll == 7 or roll == 11:
-        return "win"
-    elif roll == 2 or roll == 3 or roll == 12:
-        return "lose"
-    else:
-        return "point number"
-        
-def point_number(sum_dice):
-    point_num = sum_dice
-    while True:
-        if point_num == 7:
-            return "lose"
-        elif point_num == point_num:
+        if roll == 7 or roll == 11:
             return "win"
+        elif roll == 2 or roll == 3 or roll == 12:
+            return "lose"
+        else:
+            return "point number"
+            
+# def point_number(point):
+#     newroll = roll2dice()
+#     while newroll != point and newroll != 7:
+#         newroll = roll2dice()
+#     if newroll == point:
+#         return "win"
+#     else:
+#         return "lose"
     
     
     
@@ -79,19 +80,32 @@ def point_number(sum_dice):
 def house():
     bank = bank_account()
     bet = bet_number()
-    dice_number = roll2dice()
-    first_roll = first_roll_result(dice_number)
-    while True:
+    # dice_number = roll2dice()
+    # point_num = point_number(dice_number)
+    # first_roll = first_roll_result(dice_number)
+    while bet > 0 and bet < 100:
+        dice_number = roll2dice()
+        first_roll = first_roll_result(dice_number)
         if first_roll == "win":
             print("You won the round ")
-            bank + bet
+            bank = bank + bet
             print(bank)
         elif first_roll == "lose":
             print("You have losed the bet")
-            bank - bet 
+            bank = bank - bet 
             print(bank)
         elif first_roll == "point number":
             print("You have reached the point number")
-            point_number(first_roll)
+            point = roll2dice()
+            newroll = roll2dice()
+            while newroll != point and newroll != 7:
+                newroll = roll2dice()
+                if newroll == point:
+                    print("win") 
+                else:
+                    print("lose")
+            
+            
+            
         
 house()
