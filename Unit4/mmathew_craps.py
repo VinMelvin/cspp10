@@ -39,7 +39,7 @@ def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
     dice_sum = dice1 + dice2    
-    print("Rolled 2 dice: {} {}, Total of {}".format(dice1,dice2,dice_sum))
+    # print("Rolled 2 dice: {} {}, Total of {}".format(dice1,dice2,dice_sum))
     return dice_sum
 
 # function name: first_roll_result
@@ -49,13 +49,13 @@ def roll2dice():
 #       if roll is 7,11: return "win"
 #       if roll is 2,3,12: return "lose"
 #       if otherwise: return "point number"
-def first_roll_result(roll):
-        if roll == 7 or roll == 11:
-            return "win"
-        elif roll == 2 or roll == 3 or roll == 12:
-            return "lose"
-        else:
-            return "point number"
+# def first_roll_result(roll):
+#         if roll == 7 or roll == 11:
+#             return "win"
+#         elif roll == 2 or roll == 3 or roll == 12:
+#             return "lose"
+#         else:
+#             return "point number"
             
 # def point_number(point):
 #     newroll = roll2dice()
@@ -85,25 +85,31 @@ def house():
     # first_roll = first_roll_result(dice_number)
     while bet > 0 and bet < 100:
         dice_number = roll2dice()
-        first_roll = first_roll_result(dice_number)
-        if first_roll == "win":
+        # first_roll = first_roll_result(dice_number)
+        if dice_number == 7 or dice_number == 11:
             print("You won the round ")
-            bank = bank + bet
-            print(bank)
-        elif first_roll == "lose":
+        elif dice_number == 2 or dice_number == 3 or dice_number == 12:
             print("You have losed the bet")
-            bank = bank - bet 
-            print(bank)
-        elif first_roll == "point number":
+        else:
             print("You have reached the point number")
-            point = roll2dice()
+        # if first_roll == "win":
+        #     print("You won the round ")
+        #     bank = bank + bet
+        #     print(bank)
+        # elif first_roll == "lose":
+        #     print("You have losed the bet")
+        #     bank = bank - bet 
+        #     print(bank)
+        # elif first_roll == "point number":
+        #     print("You have reached the point number")
+            point = dice_number
             newroll = roll2dice()
             while newroll != point and newroll != 7:
                 newroll = roll2dice()
-                if newroll == point:
-                    print("win") 
-                else:
-                    print("lose")
+            if newroll == point:
+                print("win") 
+            else:
+                print("lose")
             
             
             
