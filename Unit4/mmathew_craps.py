@@ -17,13 +17,10 @@ def bank_account():
 #   arguments:   
 
 #   returns:    
-def bet_number():
+def bet_number(bank):
     bet = int(input("Enter a whole number for your bet: "))
-    if bet > 100:
-        print("You don't have that much money!!!")
-    elif bet < 0:
-        print("Bet a postive number")
-    else:
+    while (bet > bank):
+        bet = int(input("Enter a valid bet: "))
         return bet
 
 
@@ -39,7 +36,7 @@ def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
     dice_sum = dice1 + dice2    
-    # print("Rolled 2 dice: {} {}, Total of {}".format(dice1,dice2,dice_sum))
+    print("Rolled 2 dice: {} {}, Total of {}".format(dice1,dice2,dice_sum))
     return dice_sum
 
 # function name: first_roll_result
@@ -49,22 +46,28 @@ def roll2dice():
 #       if roll is 7,11: return "win"
 #       if roll is 2,3,12: return "lose"
 #       if otherwise: return "point number"
-# def first_roll_result(roll):
-#         if roll == 7 or roll == 11:
-#             return "win"
-#         elif roll == 2 or roll == 3 or roll == 12:
-#             return "lose"
-#         else:
-#             return "point number"
+def first_roll_result(roll):
+        if roll == 7 or roll == 11:
+            print("win")
+            return "win"
+        elif roll == 2 or roll == 3 or roll == 12:
+            print("lose")
+            return "lose"
+        else:
+            print("You have reached the point number ({})".format(roll))
+            return "point number"
             
-# def point_number(point):
-#     newroll = roll2dice()
-#     while newroll != point and newroll != 7:
-#         newroll = roll2dice()
-#     if newroll == point:
-#         return "win"
-#     else:
-#         return "lose"
+def point_number(point):
+    while True:
+        
+        newroll = roll2dice()
+      
+        if newroll == point:
+            print("win")
+            return "point Win"
+        elif newroll == 7:
+            print("lose")
+            return "point Lose"
     
     
     
@@ -79,37 +82,29 @@ def roll2dice():
 
 def house():
     bank = bank_account()
-    bet = bet_number()
-    # dice_number = roll2dice()
-    # point_num = point_number(dice_number)
-    # first_roll = first_roll_result(dice_number)
-    while bet > 0 and bet < 100:
+    while bank > 0:
+        bet = bet_number(bank)
         dice_number = roll2dice()
-        # first_roll = first_roll_result(dice_number)
-        if dice_number == 7 or dice_number == 11:
-            print("You won the round ")
-        elif dice_number == 2 or dice_number == 3 or dice_number == 12:
-            print("You have losed the bet")
+        first_roll = first_roll_result(dice_number)
+        if first_roll == "win":
+            bank = bank + bet
+            print("Your balance is {}".format(bank))
+        elif first_roll == "lose":
+            bank = bank - bet
+            print("Your balance is {}".format(bank))
         else:
-            print("You have reached the point number")
-        # if first_roll == "win":
-        #     print("You won the round ")
-        #     bank = bank + bet
-        #     print(bank)
-        # elif first_roll == "lose":
-        #     print("You have losed the bet")
-        #     bank = bank - bet 
-        #     print(bank)
-        # elif first_roll == "point number":
-        #     print("You have reached the point number")
-            point = dice_number
-            newroll = roll2dice()
-            while newroll != point and newroll != 7:
-                newroll = roll2dice()
-            if newroll == point:
-                print("win") 
-            else:
-                print("lose")
+            #print("You have reached the point number")
+            point_num = point_number(dice_number)
+            
+            if point_num == "point Win":
+                bank = int(bank) + bet
+                print("Your balance is {}".format(bank))
+            elif point_num == "point Lose":
+                bank = bank - bet 
+                print("Your balance is {}".format(bank))
+                
+                
+          
             
             
             
