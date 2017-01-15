@@ -1,18 +1,10 @@
 num = []
 
 while True:
-    user_input = input("Enter a number: ")
+    user_input = int(input("Enter a number: "))
     if user_input == 0:
         break 
     elif user_input > 0:
-        num.insert(1,user_input)
-        print(num)
-    elif user_input < 0:
-        use = user_input - user_input - user_input
-        num.remove(use)
-        print(num)
-    else:
-        print("Thanx")
-        
-
-
+        num.append(user_input)
+    elif user_input <= -1:
+        num.remove(user_input/-2)

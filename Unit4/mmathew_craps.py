@@ -19,9 +19,13 @@ def bank_account():
 #   returns:    
 def bet_number(bank):
     bet = int(input("Enter a whole number for your bet: "))
-    while (bet > bank):
-        bet = int(input("Enter a valid bet: "))
-        return bet
+    # while (bet <= bank):
+    while True:
+        if bet <= bank:
+            return bet
+        else:
+            bet = int(input("Enter a valid bet: "))
+            return int(bet)
 
 
 
@@ -89,9 +93,11 @@ def house():
         if first_roll == "win":
             bank = bank + bet
             print("Your balance is {}".format(bank))
+            print("----------------------------------------")
         elif first_roll == "lose":
             bank = bank - bet
             print("Your balance is {}".format(bank))
+            print("----------------------------------------")
         else:
             #print("You have reached the point number")
             point_num = point_number(dice_number)
@@ -99,9 +105,11 @@ def house():
             if point_num == "point Win":
                 bank = int(bank) + bet
                 print("Your balance is {}".format(bank))
+                print("----------------------------------------")
             elif point_num == "point Lose":
                 bank = bank - bet 
                 print("Your balance is {}".format(bank))
+                print("----------------------------------------")
                 
                 
           
@@ -110,3 +118,4 @@ def house():
             
         
 house()
+print("Thank You for playing")
