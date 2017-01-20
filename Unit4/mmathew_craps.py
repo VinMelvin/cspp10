@@ -24,6 +24,10 @@ def bet_number(bank):
     while True:
         if bet <= bank:
             return bet
+        # elif bet <= 0:
+        #     bet = int(input("Positive numbers only: ")) 
+        #     print(bet)
+        #     return bet
         else:
             bet = int(input("Enter a valid bet: "))
             return bet

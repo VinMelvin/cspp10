@@ -6,5 +6,7 @@ while True:
         break 
     elif user_input > 0:
         num.append(user_input)
+        print(num)
     elif user_input <= -1:
-        num.remove(user_input/-2)
+        num.remove(user_input/-1)
+        print(num)
