@@ -1,7 +1,9 @@
 def replace_all(original,to_replace,replace_with):
-    while True:
-        original.remove(to_replace)
-        original.append(replace_with)
+    
+    for index in range(len(original)):
+        if original[index] == to_replace:
+            original[index] = replace_with
+    
     
     
     
