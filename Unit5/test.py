@@ -13,6 +13,7 @@ sentence = "ello everyone in the class"
 print(sentence.split(" "))
 # print(sentence[1:-1])
 for x in range(sentence):
+    
     print(sentence[1:-1])
 
 word = "hello"
