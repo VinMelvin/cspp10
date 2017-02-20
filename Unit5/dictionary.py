@@ -8,13 +8,13 @@ diction = {
 def add():
     user_input = input("What key do you want to add? ")
     value = input("What is the value of the key? ")
-    diction[user_input] = value
     pprint(diction)
-    for user_input in diction:
-        if diction[user_input] == value:
-            print("exists as value! TRY AGAIN") 
-            add()
+    if user_input in diction:
+        print("exists as value! TRY AGAIN") 
+        add()
     else:
+        diction[user_input] = value
+        pprint(diction)
         main_fun()
 
 def remove_key():
