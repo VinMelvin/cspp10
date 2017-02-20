@@ -73,7 +73,7 @@ def shuffle(word):
 for word in words:
     if len(word) > 3:
         s = word[0] + shuffle(word[1:-1]) + word[-1]
-        print(" ".join(word))
+        
         
     else:
         print(word)

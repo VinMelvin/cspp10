@@ -8,14 +8,14 @@ diction = {
 def add():
     user_input = input("What key do you want to add? ")
     value = input("What is the value of the key? ")
-    pprint(diction)
-    if user_input in diction:
-        print("exists as value! TRY AGAIN") 
-        add()
-    else:
+    if user_input not in diction:
         diction[user_input] = value
         pprint(diction)
         main_fun()
+        
+    else:
+        print("exists as value! TRY AGAIN") 
+        add()
 
 def remove_key():
     user_input = input("Which key do you want to remove? ")
@@ -52,7 +52,11 @@ def main_fun():
         elif key == "exit":
             print('Done')
             break
-        
+        else:
+            print("invalid TRY AGAIN!")
+            main_fun()
+            
+            
 main_fun()
 
     

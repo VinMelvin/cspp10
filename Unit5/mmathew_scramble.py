@@ -24,7 +24,8 @@ def scramble_phrase(sentence):
             print(scramble_word(word))
         else:
             print(word)
-            print(" ".join(word))
+            #print(" ".join(word))
+            # not sure why ".join doesn't work"
     
     
 scramble_phrase(sentence)
